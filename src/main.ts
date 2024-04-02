@@ -1,6 +1,6 @@
 import "./style.css";
 import * as Three from "three";
-import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 const scene = new Three.Scene();
 const camera = new Three.PerspectiveCamera(
