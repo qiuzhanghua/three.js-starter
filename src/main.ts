@@ -15,7 +15,8 @@ const renderer = new Three.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-new OrbitControls(camera, renderer.domElement);
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.addEventListener("change", () => renderer.render(scene, camera));
 
 const geometry = new Three.BoxGeometry();
 const material = new Three.MeshBasicMaterial({
@@ -43,4 +44,5 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-animate();
+// animate();
+renderer.render(scene, camera);
