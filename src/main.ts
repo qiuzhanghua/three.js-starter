@@ -1,5 +1,6 @@
 import "./style.css";
 import * as Three from "three";
+import {OrbitControls} from "three/examples/jsm/controls/OrbitControls";
 
 const scene = new Three.Scene();
 const camera = new Three.PerspectiveCamera(
@@ -13,6 +14,8 @@ camera.position.z = 2;
 const renderer = new Three.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+
+new OrbitControls(camera, renderer.domElement);
 
 const geometry = new Three.BoxGeometry();
 const material = new Three.MeshBasicMaterial({
