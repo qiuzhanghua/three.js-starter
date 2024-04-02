@@ -1,6 +1,7 @@
 import "./style.css";
 import * as Three from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import Stats from "three/examples/jsm/libs/stats.module";
 
 const scene = new Three.Scene();
 const camera = new Three.PerspectiveCamera(
@@ -37,12 +38,16 @@ window.addEventListener(
   false,
 );
 
+const stats = new Stats();
+document.body.appendChild(stats.dom);
+
 function animate() {
   requestAnimationFrame(animate);
-  cube.rotation.x += 0.01;
-  cube.rotation.y += 0.01;
-  renderer.render(scene, camera);
+//   cube.rotation.x += 0.01;
+//   cube.rotation.y += 0.01;
+//   renderer.render(scene, camera);
+    stats.update();
 }
 
-// animate();
+animate();
 renderer.render(scene, camera);
